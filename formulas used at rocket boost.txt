@@ -1,0 +1,5 @@
+speed = get square root from ((velocity vector by x axis)^2 + (velocity vector by y axis)^2);
+
+custom rocket boost for x and y axes:
+(velocity vector by x axis) * multiplier;
+(velocity vector by y axis) * multiplier;

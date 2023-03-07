@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketBoostForCar", "RocketBoostForCar\RocketBoostForCar.csproj", "{F042F5FC-E799-4603-9E37-536CEAD733CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F042F5FC-E799-4603-9E37-536CEAD733CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F042F5FC-E799-4603-9E37-536CEAD733CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F042F5FC-E799-4603-9E37-536CEAD733CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F042F5FC-E799-4603-9E37-536CEAD733CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C4896AA-51A2-40C7-89DF-C42F82D5C9B6}
+	EndGlobalSection
+EndGlobal
