@@ -8,3 +8,13 @@ F:\STUDENT_DAYS\4_COURSE\C#\RocketBoostForCar\RocketBoostForCar\obj\Debug\Rocket
 F:\STUDENT_DAYS\4_COURSE\C#\RocketBoostForCar\RocketBoostForCar\obj\Debug\RocketBoostForCar.csproj.CoreCompileInputs.cache
 F:\STUDENT_DAYS\4_COURSE\C#\RocketBoostForCar\RocketBoostForCar\obj\Debug\RocketBoostForCar.exe
 F:\STUDENT_DAYS\4_COURSE\C#\RocketBoostForCar\RocketBoostForCar\obj\Debug\RocketBoostForCar.pdb
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\bin\Debug\RocketBoostForCar.exe.config
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\bin\Debug\RocketBoostForCar.exe
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\bin\Debug\RocketBoostForCar.pdb
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.csproj.AssemblyReference.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.MainWindow.resources
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.Properties.Resources.resources
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.csproj.GenerateResource.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.csproj.CoreCompileInputs.cache
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.exe
+F:\STUDENT_DAYS\4_COURSE\C#\c--rocket-boost\RocketBoostForCar\obj\Debug\RocketBoostForCar.pdb

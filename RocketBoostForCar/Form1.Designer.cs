@@ -30,7 +30,7 @@ namespace RocketBoostForCar
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox_baseAddressOfCar = new System.Windows.Forms.TextBox();
+            this.textBox_baseAddressOfPlayer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_EnableRocketBoost = new System.Windows.Forms.Button();
             this.button_AttachToProcess = new System.Windows.Forms.Button();
@@ -47,13 +47,13 @@ namespace RocketBoostForCar
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox_baseAddressOfCar
+            // textBox_baseAddressOfPlayer
             // 
-            this.textBox_baseAddressOfCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_baseAddressOfCar.Location = new System.Drawing.Point(270, 36);
-            this.textBox_baseAddressOfCar.Name = "textBox_baseAddressOfCar";
-            this.textBox_baseAddressOfCar.Size = new System.Drawing.Size(234, 29);
-            this.textBox_baseAddressOfCar.TabIndex = 0;
+            this.textBox_baseAddressOfPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_baseAddressOfPlayer.Location = new System.Drawing.Point(270, 36);
+            this.textBox_baseAddressOfPlayer.Name = "textBox_baseAddressOfPlayer";
+            this.textBox_baseAddressOfPlayer.Size = new System.Drawing.Size(234, 29);
+            this.textBox_baseAddressOfPlayer.TabIndex = 0;
             // 
             // label1
             // 
@@ -61,9 +61,9 @@ namespace RocketBoostForCar
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(266, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 24);
+            this.label1.Size = new System.Drawing.Size(259, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Enter base address of car:";
+            this.label1.Text = "Enter base address of player::";
             // 
             // button_EnableRocketBoost
             // 
@@ -210,7 +210,7 @@ namespace RocketBoostForCar
             this.Controls.Add(this.textBox_processName);
             this.Controls.Add(this.button_EnableRocketBoost);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox_baseAddressOfCar);
+            this.Controls.Add(this.textBox_baseAddressOfPlayer);
             this.Name = "MainWindow";
             this.Text = "Rookcet Boost";
             this.ResumeLayout(false);
@@ -220,7 +220,7 @@ namespace RocketBoostForCar
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_baseAddressOfCar;
+        private System.Windows.Forms.TextBox textBox_baseAddressOfPlayer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_EnableRocketBoost;
         private System.Windows.Forms.Button button_AttachToProcess;

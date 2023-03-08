@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace RocketBoostForCar
 {
-    public class MemoryManager
+    public class MemoryManagerFor32bitProcesses
     {
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, Int32 nSize, out IntPtr lpNumberOfBytesRead);
@@ -58,6 +58,16 @@ namespace RocketBoostForCar
             return valueAsFloat;
         }
 
+        public int GetValueFromTargetAddressAsInt(int targetAddress, IntPtr processHandle)
+        {
+            int numberOfBytesInTargetAddress = 4;
+            byte[] buffer = new byte[numberOfBytesInTargetAddress];
+            IntPtr numberOfReadBytes;
+            ReadProcessMemory(processHandle, (IntPtr)targetAddress, buffer, numberOfBytesInTargetAddress, out numberOfReadBytes);
+            int valueAsInt = BitConverter.ToInt32(buffer, 0);
+            return valueAsInt;
+        }
+
         public void SetValueAsFloatToTargetAddress(int targetAddress, float value , IntPtr processHandle)
         {
             int numberOfBytesInTargetAddress = 4;
@@ -66,6 +76,24 @@ namespace RocketBoostForCar
             IntPtr numberOfWrittenBytes;
             WriteProcessMemory(processHandle, (IntPtr)targetAddress, buffer, numberOfBytesInTargetAddress, out numberOfWrittenBytes);
 
+        }
+
+        public int GetTargetAddressByPointersUsingOffsets(int[] offsetsInBytes, int baseAddressFromWhereToStartSearch , IntPtr processHandle)
+        {
+            int sizeOfTargetAddressInBytes = 4;
+            byte[] buffer = new byte[sizeOfTargetAddressInBytes];
+            IntPtr numberOfReadBytes;
+            int nextPointerAddress = 0;
+            int nextFoundValue = 0;
+
+            ReadProcessMemory(processHandle, (IntPtr)baseAddressFromWhereToStartSearch, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
+            for (int i = 0; i < offsetsInBytes.Length; i++)
+            { 
+                nextFoundValue = BitConverter.ToInt32(buffer, 0);
+                nextPointerAddress = nextFoundValue + offsetsInBytes[i];
+                ReadProcessMemory(processHandle, (IntPtr)nextPointerAddress, buffer, sizeOfTargetAddressInBytes, out numberOfReadBytes);
+            }
+            return nextPointerAddress;
         }
     }
 }

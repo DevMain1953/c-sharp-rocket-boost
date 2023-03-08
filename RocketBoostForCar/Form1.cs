@@ -8,14 +8,14 @@ namespace RocketBoostForCar
 {
     public partial class MainWindow : Form
     {
-        private readonly MemoryManager memoryManager;
+        private readonly MemoryManagerFor32bitProcesses memoryManager;
         private IntPtr processHandle;
         private float multiplierForBoost;
 
         public MainWindow()
         {
             InitializeComponent();
-            memoryManager = new MemoryManager();
+            memoryManager = new MemoryManagerFor32bitProcesses();
         }
 
         private void button_AttachToProcess_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace RocketBoostForCar
             }
 
             uint allRightsToProcess = 0x001F0FFF;
-            processHandle = MemoryManager.OpenProcess(allRightsToProcess, false, processId);
+            processHandle = MemoryManagerFor32bitProcesses.OpenProcess(allRightsToProcess, false, processId);
 
             button_AttachToProcess.Enabled = false;
             button_DetachFromProcess.Enabled = true;
@@ -36,7 +36,7 @@ namespace RocketBoostForCar
 
         private void button_DetachFromProcess_Click(object sender, EventArgs e)
         {
-            MemoryManager.CloseHandle(processHandle);
+            MemoryManagerFor32bitProcesses.CloseHandle(processHandle);
             MessageBox.Show("Process handle is closed");
 
             button_DetachFromProcess.Enabled = false;
@@ -64,7 +64,7 @@ namespace RocketBoostForCar
 
         private void loopExecutor_Tick(object sender, EventArgs e)
         {
-            int baseAddressOfCar = Convert.ToInt32(textBox_baseAddressOfCar.Text, 16);
+            int baseAddressOfCar = Convert.ToInt32(textBox_baseAddressOfPlayer.Text, 16);
 
             int offsetToAddressOfXVelocityVectorOfCarInBytes = 0x78;
             int addressOfXVelocityVectorOfCar = baseAddressOfCar + offsetToAddressOfXVelocityVectorOfCarInBytes;
