@@ -64,29 +64,28 @@ namespace RocketBoostForCar
 
         private void loopExecutor_Tick(object sender, EventArgs e)
         {
-            int baseAddressOfCar = Convert.ToInt32(textBox_baseAddressOfPlayer.Text, 16);
+            int baseAddressOfPlayer = Convert.ToInt32(textBox_baseAddressOfPlayer.Text, 16);
+            int pointerToCar = baseAddressOfPlayer + 0x58C;
+            int baseAddressOfCar = memoryManager.GetValueFromTargetAddressAsInt(pointerToCar, processHandle);
 
-            int offsetToAddressOfXVelocityVectorOfCarInBytes = 0x78;
-            int addressOfXVelocityVectorOfCar = baseAddressOfCar + offsetToAddressOfXVelocityVectorOfCarInBytes;
+            int addressOfXVelocity = baseAddressOfCar + 0x44;
+            int addressOfYVelocity = baseAddressOfCar + 0x48;
 
-            int offsetToAddressOfYVelocityVectorOfCarInBytes = 0x7C;
-            int addressOfYVelocityVectorOfCar = baseAddressOfCar + offsetToAddressOfYVelocityVectorOfCarInBytes;
+            float xVelocityOfCar = memoryManager.GetValueFromTargetAddressAsFloat(addressOfXVelocity, processHandle);
+            float yVelocityOfCar = memoryManager.GetValueFromTargetAddressAsFloat(addressOfYVelocity, processHandle);
+            float speedOfCar = GetSpeedOfObject(xVelocityOfCar, yVelocityOfCar);
 
-            float xVelocityVectorOfCar = memoryManager.GetValueFromTargetAddressAsFloat(addressOfXVelocityVectorOfCar, processHandle);
-            float yVelocityVectorOfCar = memoryManager.GetValueFromTargetAddressAsFloat(addressOfYVelocityVectorOfCar, processHandle);
-            float speedOfCar = GetSpeedOfObject(xVelocityVectorOfCar, yVelocityVectorOfCar);
-
-            label_xVelocityOfCar.Text = "X velocity of car: " + xVelocityVectorOfCar;
-            label_yVelocityOfCar.Text = "Y velocity of car: " + yVelocityVectorOfCar;
+            label_xVelocityOfCar.Text = "X velocity of car: " + xVelocityOfCar;
+            label_yVelocityOfCar.Text = "Y velocity of car: " + yVelocityOfCar;
             textBox_carSpeed.Text = speedOfCar.ToString();
 
-            if (GetSpeedOfObject(xVelocityVectorOfCar, yVelocityVectorOfCar) < 1.8 && memoryManager.IsKeyPushedDown(Keys.W))
+            if (speedOfCar < 1.8 && memoryManager.IsKeyPushedDown(Keys.W))
             {
-                float newXVelocityVectorOfCar = xVelocityVectorOfCar * multiplierForBoost;
-                float newYVelocityVectorOfCar = yVelocityVectorOfCar * multiplierForBoost;
+                float newXVelocityOfCar = xVelocityOfCar * multiplierForBoost;
+                float newYVelocityOfCar = yVelocityOfCar * multiplierForBoost;
 
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfXVelocityVectorOfCar, newXVelocityVectorOfCar, processHandle);
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfYVelocityVectorOfCar, newYVelocityVectorOfCar, processHandle);
+                memoryManager.SetValueAsFloatToTargetAddress(addressOfXVelocity, newXVelocityOfCar, processHandle);
+                memoryManager.SetValueAsFloatToTargetAddress(addressOfYVelocity, newYVelocityOfCar, processHandle);
             }
         }
 
