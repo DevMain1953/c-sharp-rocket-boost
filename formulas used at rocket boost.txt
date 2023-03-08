@@ -1,5 +1,13 @@
-speed = get square root from ((velocity vector by x axis)^2 + (velocity vector by y axis)^2);
+2D_rotation_matrix:
+[[cosine(angle), -sinus(angle), 0]]
+[[ sinus(angle), cosine(angle), 0]]
+[[            0,             0, 1]]
 
-custom rocket boost for x and y axes:
-(velocity vector by x axis) * multiplier;
-(velocity vector by y axis) * multiplier;
+yaw angle in radians = get arctangent of(2D_rotation_matrix[2, 1], 2D_rotation_matrix[1, 1]);
+yaw angle in degress = (yaw angle in radians) / (180 / PI);
+
+custom rocket boost for car:
+speed = get square root from((velocity on x axis)^2 + (velocity on y axis)^2);
+
+new velocity on x axis = (velocity on x axis) - ((sinus of yaw angle * -1) * multiplier);
+new velocity on y axis = (velocity on y axis) + (cosine of yaw angle * multiplier);

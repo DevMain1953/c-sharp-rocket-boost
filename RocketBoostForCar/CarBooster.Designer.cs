@@ -1,7 +1,7 @@
 ﻿
 namespace RocketBoostForCar
 {
-    partial class MainWindow
+    partial class CarBooster
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +36,7 @@ namespace RocketBoostForCar
             this.button_AttachToProcess = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_processName = new System.Windows.Forms.TextBox();
-            this.textBox_carSpeed = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_carSpeed = new System.Windows.Forms.Label();
             this.label_xVelocityOfCar = new System.Windows.Forms.Label();
             this.button_DetachFromProcess = new System.Windows.Forms.Button();
             this.label_yVelocityOfCar = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace RocketBoostForCar
             this.button_DisableRocketBoost = new System.Windows.Forms.Button();
             this.textBox_multiplierForBoost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label_angleInDegrees = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_baseAddressOfPlayer
@@ -106,24 +106,15 @@ namespace RocketBoostForCar
             this.textBox_processName.Size = new System.Drawing.Size(234, 29);
             this.textBox_processName.TabIndex = 3;
             // 
-            // textBox_carSpeed
+            // label_carSpeed
             // 
-            this.textBox_carSpeed.Enabled = false;
-            this.textBox_carSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_carSpeed.Location = new System.Drawing.Point(270, 322);
-            this.textBox_carSpeed.Name = "textBox_carSpeed";
-            this.textBox_carSpeed.Size = new System.Drawing.Size(234, 29);
-            this.textBox_carSpeed.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(266, 295);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 24);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Car speed:";
+            this.label_carSpeed.AutoSize = true;
+            this.label_carSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_carSpeed.Location = new System.Drawing.Point(266, 295);
+            this.label_carSpeed.Name = "label_carSpeed";
+            this.label_carSpeed.Size = new System.Drawing.Size(102, 24);
+            this.label_carSpeed.TabIndex = 7;
+            this.label_carSpeed.Text = "Car speed:";
             // 
             // label_xVelocityOfCar
             // 
@@ -192,26 +183,36 @@ namespace RocketBoostForCar
             this.label4.TabIndex = 14;
             this.label4.Text = "Enter multiplier for boost:";
             // 
-            // MainWindow
+            // label_angleInDegrees
+            // 
+            this.label_angleInDegrees.AutoSize = true;
+            this.label_angleInDegrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_angleInDegrees.Location = new System.Drawing.Point(266, 328);
+            this.label_angleInDegrees.Name = "label_angleInDegrees";
+            this.label_angleInDegrees.Size = new System.Drawing.Size(160, 24);
+            this.label_angleInDegrees.TabIndex = 16;
+            this.label_angleInDegrees.Text = "Angle in degrees:";
+            // 
+            // CarBooster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 413);
+            this.ClientSize = new System.Drawing.Size(820, 427);
+            this.Controls.Add(this.label_angleInDegrees);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_multiplierForBoost);
             this.Controls.Add(this.button_DisableRocketBoost);
             this.Controls.Add(this.label_yVelocityOfCar);
             this.Controls.Add(this.button_DetachFromProcess);
             this.Controls.Add(this.label_xVelocityOfCar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox_carSpeed);
+            this.Controls.Add(this.label_carSpeed);
             this.Controls.Add(this.button_AttachToProcess);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_processName);
             this.Controls.Add(this.button_EnableRocketBoost);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_baseAddressOfPlayer);
-            this.Name = "MainWindow";
+            this.Name = "CarBooster";
             this.Text = "Rookcet Boost";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,8 +227,7 @@ namespace RocketBoostForCar
         private System.Windows.Forms.Button button_AttachToProcess;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_processName;
-        private System.Windows.Forms.TextBox textBox_carSpeed;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_carSpeed;
         private System.Windows.Forms.Label label_xVelocityOfCar;
         private System.Windows.Forms.Button button_DetachFromProcess;
         private System.Windows.Forms.Label label_yVelocityOfCar;
@@ -235,6 +235,7 @@ namespace RocketBoostForCar
         private System.Windows.Forms.Button button_DisableRocketBoost;
         private System.Windows.Forms.TextBox textBox_multiplierForBoost;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_angleInDegrees;
     }
 }
 
