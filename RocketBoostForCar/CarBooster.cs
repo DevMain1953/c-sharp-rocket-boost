@@ -130,6 +130,7 @@ namespace RocketBoostForCar
                 }
                 yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(0.05));
             }
+            RotateCarToFlipItOver();
 
             float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
             float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
@@ -160,7 +161,22 @@ namespace RocketBoostForCar
             label_xVelocityOfCar.Text = "X velocity of car: " + xVelocityOfCar;
             label_yVelocityOfCar.Text = "Y velocity of car: " + yVelocityOfCar;
             label_carSpeed.Text = "Car speed: " + speedOfCar;
-            label_angleInDegrees.Text = "Yaw angle in degrees: " + yawAngleInDegrees.ToString();
+            label_yawAngleInDegrees.Text = "Yaw angle in degrees: " + yawAngleInDegrees.ToString();
+        }
+
+        private void RotateCarToFlipItOver()
+        {
+            if (memoryManager.IsKeyPushedDown(Keys.NumPad7))
+            {
+                if (yawAngleInDegrees != 90)
+                {
+                    yawAngleInDegrees = 90;
+                }
+                else
+                {
+                    yawAngleInDegrees = -90;
+                }
+            }
         }
     }
 }

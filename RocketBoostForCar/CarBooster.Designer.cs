@@ -44,7 +44,7 @@ namespace RocketBoostForCar
             this.button_DisableRocketBoost = new System.Windows.Forms.Button();
             this.textBox_multiplierForBoost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label_angleInDegrees = new System.Windows.Forms.Label();
+            this.label_yawAngleInDegrees = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_baseAddressOfPlayer
@@ -183,22 +183,22 @@ namespace RocketBoostForCar
             this.label4.TabIndex = 14;
             this.label4.Text = "Enter multiplier for boost:";
             // 
-            // label_angleInDegrees
+            // label_yawAngleInDegrees
             // 
-            this.label_angleInDegrees.AutoSize = true;
-            this.label_angleInDegrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_angleInDegrees.Location = new System.Drawing.Point(266, 328);
-            this.label_angleInDegrees.Name = "label_angleInDegrees";
-            this.label_angleInDegrees.Size = new System.Drawing.Size(160, 24);
-            this.label_angleInDegrees.TabIndex = 16;
-            this.label_angleInDegrees.Text = "Angle in degrees:";
+            this.label_yawAngleInDegrees.AutoSize = true;
+            this.label_yawAngleInDegrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_yawAngleInDegrees.Location = new System.Drawing.Point(266, 328);
+            this.label_yawAngleInDegrees.Name = "label_yawAngleInDegrees";
+            this.label_yawAngleInDegrees.Size = new System.Drawing.Size(198, 24);
+            this.label_yawAngleInDegrees.TabIndex = 16;
+            this.label_yawAngleInDegrees.Text = "Yaw angle in degrees:";
             // 
             // CarBooster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 427);
-            this.Controls.Add(this.label_angleInDegrees);
+            this.Controls.Add(this.label_yawAngleInDegrees);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_multiplierForBoost);
             this.Controls.Add(this.button_DisableRocketBoost);
@@ -235,7 +235,7 @@ namespace RocketBoostForCar
         private System.Windows.Forms.Button button_DisableRocketBoost;
         private System.Windows.Forms.TextBox textBox_multiplierForBoost;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label_angleInDegrees;
+        private System.Windows.Forms.Label label_yawAngleInDegrees;
     }
 }
 

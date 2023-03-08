@@ -32,11 +32,6 @@ namespace RocketBoostForCar
             return (GetAsyncKeyState((int)key) & 0x8000) != 0;
         }
 
-        public bool IsKeyPressed(System.Windows.Forms.Keys key)
-        {
-            return (GetAsyncKeyState((int)key) & 1) != 0;
-        }
-
         public int GetProcessIDByProcessName(string processName)
         {
             var processes = Process.GetProcesses();
