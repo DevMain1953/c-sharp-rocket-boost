@@ -108,33 +108,28 @@ namespace RocketBoostForCar
 
         private void RotateCarAroundZAxis()
         {
-            if (memoryManager.IsKeyPushedDown(Keys.Right))
+            if (memoryManager.IsKeyPushedDown(Keys.D))
             {
                 if (yawAngleInDegrees > 180)
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
                 yawAngleInDegrees = yawAngleInDegrees + (1 * Convert.ToSingle(0.05));
-
-                float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
-                float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleSinus, newSinusOfYawAngle, processHandle);
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleCosine, newCosineOfYawAngle, processHandle);
             }
 
-            if (memoryManager.IsKeyPushedDown(Keys.Left))
+            if (memoryManager.IsKeyPushedDown(Keys.A))
             {
                 if (yawAngleInDegrees < -180)
                 {
                     yawAngleInDegrees = yawAngleInDegrees * -1;
                 }
                 yawAngleInDegrees = yawAngleInDegrees - (1 * Convert.ToSingle(0.05));
-
-                float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
-                float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleSinus, newSinusOfYawAngle, processHandle);
-                memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleCosine, newCosineOfYawAngle, processHandle);
             }
+
+            float newSinusOfYawAngle = Convert.ToSingle(Math.Sin(yawAngleInDegrees));
+            float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
+            memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleSinus, newSinusOfYawAngle, processHandle);
+            memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleCosine, newCosineOfYawAngle, processHandle);
         }
 
         private void BoostCar()
