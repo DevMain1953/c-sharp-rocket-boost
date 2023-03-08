@@ -24,6 +24,8 @@ namespace RocketBoostForCar
         private int addressOfYVelocity = 0;
         private int addressOfYawAngleSinus = 0;
         private int addressOfYawAngleCosine = 0;
+        private int addressOfRollAngleSinus = 0;
+        private int addressOfPitchAngleSinus_withMinus = 0;
 
         public CarBooster()
         {
@@ -89,6 +91,9 @@ namespace RocketBoostForCar
             addressOfYawAngleSinus = baseAddressOfCarBody + 0x10;
             addressOfYawAngleCosine = baseAddressOfCarBody + 0x14;
 
+            addressOfRollAngleSinus = baseAddressOfCarBody + 0x8;
+            addressOfPitchAngleSinus_withMinus = baseAddressOfCarBody + 0x18;
+
             RotateCarAroundZAxis();
             BoostCar();
         }
@@ -130,6 +135,9 @@ namespace RocketBoostForCar
             float newCosineOfYawAngle = Convert.ToSingle(Math.Cos(yawAngleInDegrees));
             memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleSinus, newSinusOfYawAngle, processHandle);
             memoryManager.SetValueAsFloatToTargetAddress(addressOfYawAngleCosine, newCosineOfYawAngle, processHandle);
+            
+            memoryManager.SetValueAsFloatToTargetAddress(addressOfRollAngleSinus, Convert.ToSingle(0), processHandle);
+            memoryManager.SetValueAsFloatToTargetAddress(addressOfPitchAngleSinus_withMinus, Convert.ToSingle(0), processHandle);
         }
 
         private void BoostCar()

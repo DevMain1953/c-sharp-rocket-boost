@@ -213,7 +213,7 @@ namespace RocketBoostForCar
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_baseAddressOfPlayer);
             this.Name = "CarBooster";
-            this.Text = "Rookcet Boost";
+            this.Text = "Rocket Boost";
             this.ResumeLayout(false);
             this.PerformLayout();
 
