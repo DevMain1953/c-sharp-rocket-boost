@@ -65,6 +65,19 @@ namespace RocketBoostForCar
             {
                 multiplierForBoost = Convert.ToSingle(textBox_multiplierForBoost.Text);
                 baseAddressOfPlayer = Convert.ToInt32(textBox_baseAddressOfPlayer.Text, 16);
+                pointerToCar = baseAddressOfPlayer + 0x58C;
+                baseAddressOfCar = memoryManager.GetValueFromTargetAddressAsInt(pointerToCar, processHandle);
+                pointerToCarBody = baseAddressOfCar + 0x14;
+                baseAddressOfCarBody = memoryManager.GetValueFromTargetAddressAsInt(pointerToCarBody, processHandle);
+
+                addressOfXVelocity = baseAddressOfCar + 0x44;
+                addressOfYVelocity = baseAddressOfCar + 0x48;
+
+                addressOfYawAngleSinus = baseAddressOfCarBody + 0x10;
+                addressOfYawAngleCosine = baseAddressOfCarBody + 0x14;
+                addressOfRollAngleSinus = baseAddressOfCarBody + 0x8;
+                addressOfPitchAngleSinus_withMinus = baseAddressOfCarBody + 0x18;
+
                 loopExecutor.Enabled = true;
                 button_EnableRocketBoost.Enabled = false;
                 button_DisableRocketBoost.Enabled = true;
@@ -80,20 +93,6 @@ namespace RocketBoostForCar
 
         private void loopExecutor_Tick(object sender, EventArgs e)
         {
-            pointerToCar = baseAddressOfPlayer + 0x58C;
-            baseAddressOfCar = memoryManager.GetValueFromTargetAddressAsInt(pointerToCar, processHandle);
-            pointerToCarBody = baseAddressOfCar + 0x14;
-            baseAddressOfCarBody = memoryManager.GetValueFromTargetAddressAsInt(pointerToCarBody, processHandle);
-
-            addressOfXVelocity = baseAddressOfCar + 0x44;
-            addressOfYVelocity = baseAddressOfCar + 0x48;
-
-            addressOfYawAngleSinus = baseAddressOfCarBody + 0x10;
-            addressOfYawAngleCosine = baseAddressOfCarBody + 0x14;
-
-            addressOfRollAngleSinus = baseAddressOfCarBody + 0x8;
-            addressOfPitchAngleSinus_withMinus = baseAddressOfCarBody + 0x18;
-
             RotateCarAroundZAxis();
             BoostCar();
         }
